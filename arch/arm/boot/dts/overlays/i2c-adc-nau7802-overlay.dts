@@ -1,4 +1,4 @@
-// Definitions for NXP PCA9685A I2C PWM controller on ARM I2C bus.
+// Definitions for Nuvoton NUA7802 I2C 24-Bit Dual-Channel ADC controller on ARM I2C bus.
 /dts-v1/;
 /plugin/;
 
@@ -12,15 +12,11 @@
 			#size-cells = <0>;
 			status = "okay";
 
-			pca: pca@40 {
-				compatible = "nxp,pca9685-pwm";
-				#pwm-cells = <2>;
-				reg = <0x40>;
+			nau: nau@2a {
+				compatible = "nuvoton,nau7802";
+				reg = <0x2a>;
 				status = "okay";
 			};
 		};
-	};
-	__overrides__ {
-		addr = <&pca>,"reg:0";
 	};
 };
